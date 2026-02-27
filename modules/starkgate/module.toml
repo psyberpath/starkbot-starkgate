@@ -1,0 +1,25 @@
+[module]
+name = "starkgate"
+version = "1.0.0"
+description = "Universal x402 Paywall Proxy"
+author = "starkbot"
+
+[service]
+command = "uv run service.py"
+default_port = 9102
+has_dashboard = false
+health_endpoint = "/rpc/status"
+
+[[tools]]
+name = "proxy_request"
+description = "Forwards a request to an external API after verifying an x402 payment from the sender."
+rpc_method = "POST"
+rpc_endpoint = "/rpc/proxy"
+
+[tools.parameters.target_url]
+type = "string"
+required = true
+
+[tools.parameters.from_address]
+type = "string"
+required = true

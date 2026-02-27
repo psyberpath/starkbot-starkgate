@@ -1,0 +1,14 @@
+[project]
+name = "starkgate"
+version = "1.0.0"
+description = "Universal x402 Paywall Proxy"
+dependencies = [
+    "fastapi",
+    "httpx",
+    "pydantic",
+    "uvicorn"
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
